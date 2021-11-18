@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import LoginForm from './components/LoginForm';
-import SigninForm from './components/SigninForm';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Routes from './router';
+
 
 function App() {
   const adminUser = {
@@ -25,23 +25,10 @@ function App() {
     }
   }
 
-
-
-
   return (
     <Router>
-      <div className="App">
-        {(user.email != "") ? (
-        <div className="welcome">
-          <h2>welcome</h2>
-        </div>
-        ) : (
-        <Route path="/login" component={LoginForm} Login={Login} />
-        )}
-       <Route path="/signinform" component={SigninForm} />
-      </div>
+      <Routes />
     </Router>
-  
   );
 }
 
